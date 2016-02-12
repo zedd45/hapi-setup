@@ -10,7 +10,7 @@ each connection in connections || []
     span Labels
     span [#{connection.labels}]
     h4 Routes
-    div
+    div.hs-well
       each route in connection.routes || []
         div
           div
@@ -23,9 +23,9 @@ each connection in connections || []
             span Plugin
             span #{route.plugin}
     h4 Plugins
-    div
+    div.hs-well
       each plug, name in connection.plugins || {}
-        div
+        div.hs-panel
           h5 #{name}
           div
             span Version
@@ -40,7 +40,7 @@ each connection in connections || []
             div
               h6 Package
               +keyvalue(plug.attributes.pkg)
-          else 
+          else
             div
               h6 Attributes
               +keyvalue(plug.attributes || {})

@@ -1,20 +1,28 @@
 h2 Runtime
-div
-  span Execution Path
-  span #{runtime.execPath}
-div
-  span Command Line Arguments
-  span [#{runtime.argv}]
-div
-  span Node Command Line Arguments
-  span #{runtime.execArgv}
-div
+
+div.hs-container
+  div
+    span Execution Path
+    span #{runtime.execPath}
+  div
+    span Command Line Arguments
+    span [#{runtime.argv}]
+  div
+    span Node Command Line Arguments
+    span #{runtime.execArgv}
+
+div.clearme
   h3 Versions
-  ul
+  ul.hs-versions.hs-well
     each value, key in runtime.versions
-      li= key + ' version: ' + value
+      li
+        span= key + ' version: '
+        span= value
 div
   h3 Environment
-  ul
+  ul.hs-env.hs-well
     each value, key in runtime.env
-      li= key + ' = ' + value
+      li
+        span= key
+        //- don't want the equal sign to be bold
+        span= ' = ' + value

@@ -1,6 +1,62 @@
 @import 'jeet'
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700)
 
 normalize-css()
 
+*
+  box-sizing border-box
+
 body
+  // default to tablet
   center(1024px)
+  color #3C3A31
+  padding 1em
+  max-width 50em
+  +mobile()
+    center(rupture.mobile-cutoff)
+  +above(rupture.hd-cutoff)
+    center(rupture.hd-cutoff)
+
+h1
+  color #f6941e
+
+h2, h3, h4, h5
+  font-family 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif
+  border-bottom 1px solid #dedede
+  padding 1.5em 0
+
+h5, h6
+  font-size 1em
+
+.hs-well
+  background-color #f8f8f8
+  padding 1.5em
+  margin 0
+  box-shadow 0 3px 1px 1px #ccc
+  // some variables will be too long to fit in the container
+  word-break: break-all;
+
+
+.clearme
+  // this should use jeet's cf, but the docs and I are having a disagreement
+  clear both
+
+
+.hs-container > div > span
+  // column(1/2, cycle: 2)
+  span(1/2)
+
+// .configuration
+
+ul
+  list-style none
+  margin-left 0
+  padding-left 1em
+
+  li
+    margin-top 1em
+    border-bottom 1px inset #ccc
+    padding-bottom 0.75em
+
+    & > span:first-child
+      font-weight bold
